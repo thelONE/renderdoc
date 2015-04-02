@@ -109,6 +109,8 @@ enum RDCDriver
 	RDC_Custom9,
 };
 
+typedef uint32_t bool32;
+
 namespace DXBC { class DXBCFile; }
 namespace Callstack { class StackResolver; }
 
