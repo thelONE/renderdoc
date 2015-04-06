@@ -57,7 +57,12 @@ void library_loaded()
 			string optstr = opts;
 
 			CaptureOptions optstruct;
-			optstruct.FromString(optstr);
+			{
+				// serialise from string with two chars per byte
+				byte *b = (byte *)&optstruct;
+				for(size_t i=0; i < sizeof(CaptureOptions); i++)
+					*(b++) = (byte(optstr[i*2+0] - 'a') << 4) | byte(optstr[i*2+1] - 'a');
+			}
 
 			RenderDoc::Inst().SetCaptureOptions(&optstruct);
 		}
