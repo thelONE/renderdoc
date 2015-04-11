@@ -29,3 +29,6 @@
 void MakeShaderReflection(const GLHookSet &gl, GLenum shadType, GLuint sepProg, ShaderReflection &refl, bool pointSizeUsed, bool clipDistanceUsed);
 GLuint MakeSeparableShaderProgram(const GLHookSet &gl, GLenum type, std::vector<std::string> sources, vector<string> *includepaths);
 void CheckVertexOutputUses(const std::vector<std::string> &sources, bool &pointSizeUsed, bool &clipDistanceUsed);
+
+string CompileSPIRV(GLenum shadType, const std::vector<std::string> &sources, vector<uint32_t> &spirv);
+void DisassembleSPIRV(GLenum shadType, const vector<uint32_t> &spirv, string &disasm);

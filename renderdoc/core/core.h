@@ -173,6 +173,8 @@ class RenderDoc
 		void Initialise();
 		void Shutdown();
 
+		void InitGLSLang();
+
 		void SetReplayApp(bool replay) { m_Replay = replay; }
 		bool IsReplayApp() const { return m_Replay; }
 
@@ -353,6 +355,7 @@ class RenderDoc
 		static void RemoteAccessClientThread(void *s);
 
 		ICrashHandler *m_ExHandler;
+		bool m_GLSLang;
 };
 
 struct DriverRegistration

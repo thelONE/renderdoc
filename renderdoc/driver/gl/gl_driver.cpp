@@ -768,6 +768,8 @@ WrappedOpenGL::WrappedOpenGL(const char *logfile, const GLHookSet &funcs)
 		m_DeviceRecord = m_ContextRecord = NULL;
 
 		TrackedResource::SetReplayResourceIDs();
+
+		RenderDoc::Inst().InitGLSLang();
 	}
 
 	m_FakeBB_FBO = 0;

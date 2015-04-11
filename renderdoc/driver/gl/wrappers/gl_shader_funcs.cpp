@@ -165,7 +165,13 @@ bool WrappedOpenGL::Serialise_glCompileShader(GLuint shader)
 		{
 			shadDetails.prog = sepProg;
 			MakeShaderReflection(m_Real, shadDetails.type, sepProg, shadDetails.reflection, pointSizeUsed, clipDistanceUsed);
-			
+
+			string s = CompileSPIRV(shadDetails.type, shadDetails.sources, shadDetails.spirv);
+			if(!shadDetails.spirv.empty())
+				DisassembleSPIRV(shadDetails.type, shadDetails.spirv, s);
+
+			shadDetails.reflection.Disassembly = s;
+
 			create_array_uninit(shadDetails.reflection.DebugInfo.files, shadDetails.sources.size());
 			for(size_t i=0; i < shadDetails.sources.size(); i++)
 			{
@@ -355,6 +361,12 @@ bool WrappedOpenGL::Serialise_glCreateShaderProgramv(GLuint program, GLenum type
 		shadDetails.sources.swap(src);
 		shadDetails.prog = sepprog;
 		MakeShaderReflection(m_Real, Type, real, shadDetails.reflection, pointSizeUsed, clipDistanceUsed);
+
+		string s = CompileSPIRV(shadDetails.type, shadDetails.sources, shadDetails.spirv);
+		if(!shadDetails.spirv.empty())
+			DisassembleSPIRV(shadDetails.type, shadDetails.spirv, s);
+
+		shadDetails.reflection.Disassembly = s;
 
 		create_array_uninit(shadDetails.reflection.DebugInfo.files, shadDetails.sources.size());
 		for(size_t i=0; i < shadDetails.sources.size(); i++)
@@ -1162,6 +1174,12 @@ bool WrappedOpenGL::Serialise_glCompileShaderIncludeARB(GLuint shader, GLsizei c
 			shadDetails.prog = sepProg;
 			MakeShaderReflection(m_Real, shadDetails.type, sepProg, shadDetails.reflection, pointSizeUsed, clipDistanceUsed);
 			
+			string s = CompileSPIRV(shadDetails.type, shadDetails.sources, shadDetails.spirv);
+			if(!shadDetails.spirv.empty())
+				DisassembleSPIRV(shadDetails.type, shadDetails.spirv, s);
+
+			shadDetails.reflection.Disassembly = s;
+
 			create_array_uninit(shadDetails.reflection.DebugInfo.files, shadDetails.sources.size());
 			for(size_t i=0; i < shadDetails.sources.size(); i++)
 			{

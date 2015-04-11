@@ -36,6 +36,11 @@
 #include "stb/stb_image.h"
 #include "common/dds_readwrite.h"
 
+#undef max
+#undef min
+
+#include "glslang/glslang/Public/ShaderLang.h"
+
 // not provided by tinyexr, just do by hand
 bool is_exr_file(FILE *f)
 {
@@ -173,6 +178,8 @@ RenderDoc::RenderDoc()
 	
 	m_ExHandler = NULL;
 
+	m_GLSLang = false;
+
 	m_Overlay = eOverlay_Default;
 	
 	m_RemoteServerThreadShutdown = false;
@@ -257,11 +264,25 @@ void RenderDoc::Initialise()
 	}
 }
 
+void RenderDoc::InitGLSLang()
+{
+	if(!m_GLSLang)
+	{
+		glslang::InitializeProcess();
+		m_GLSLang = true;
+	}
+}
+
 RenderDoc::~RenderDoc()
 {
 	if(m_ExHandler)
 	{
 		UnloadCrashHandler();
+	}
+
+	if(m_GLSLang)
+	{
+		glslang::FinalizeProcess();
 	}
 
 	for(size_t i=0; i < m_Captures.size(); i++)

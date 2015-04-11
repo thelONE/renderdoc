@@ -247,6 +247,7 @@ class WrappedOpenGL : public IFrameCapturer
 			GLenum type;
 			vector<string> sources;
 			vector<string> includepaths;
+			vector<uint32_t> spirv;
 			ShaderReflection reflection;
 			GLuint prog;
 		};
