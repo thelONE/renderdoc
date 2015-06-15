@@ -1778,6 +1778,52 @@ namespace renderdocui.Windows.PipelineState
             return null;
         }
 
+        private void vsShaderSave_Click(object sender, EventArgs e)
+        {
+            shaderSave_Click(sender, e);
+        }
+
+        private void hsShaderSave_Click(object sender, EventArgs e)
+        {
+            shaderSave_Click(sender, e);
+        }
+
+        private void gsShaderSave_Click(object sender, EventArgs e)
+        {
+            shaderSave_Click(sender, e);
+        }
+
+        private void dsShaderSave_Click(object sender, EventArgs e)
+        {
+            shaderSave_Click(sender, e);
+        }
+
+        private void psShaderSave_Click(object sender, EventArgs e)
+        {
+            shaderSave_Click(sender, e);
+        }
+
+        private void shaderSave_Click(object sender, EventArgs e)
+        {
+            D3D11PipelineState.ShaderStage stage = GetStageForSender(sender);
+            if (stage == null) 
+                return;
+            ShaderReflection shaderDetails = stage.ShaderDetails;
+            if (stage.Shader == ResourceId.Null) 
+                return;
+            SaveFileDialog saveDlg = new SaveFileDialog();
+            saveDlg.DefaultExt = "shaderbin";
+            saveDlg.Filter = "Shader Blob Files (*.shaderbin)|*.shaderbin";
+            saveDlg.Title = "Save Shader Blob As";
+
+            if( saveDlg.ShowDialog() == DialogResult.OK )
+            {
+                FileStream fs = new FileStream(saveDlg.FileName, FileMode.OpenOrCreate);
+                fs.Write(shaderDetails.ShaderBlob, 0, shaderDetails.ShaderBlob.Length);
+                fs.Close();
+            }
+        }
+
         private void shader_Click(object sender, EventArgs e)
         {
             if (sender == iaBytecode || sender == iaBytecodeCog)

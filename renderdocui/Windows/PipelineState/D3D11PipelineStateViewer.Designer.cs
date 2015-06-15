@@ -270,6 +270,7 @@
             this.vsShader = new System.Windows.Forms.Label();
             this.vsShaderCog = new System.Windows.Forms.PictureBox();
             this.vsShaderEdit = new System.Windows.Forms.PictureBox();
+            this.vsShaderSave = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.vsClasses = new TreelistView.TreeListView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -302,6 +303,7 @@
             this.dsShader = new System.Windows.Forms.Label();
             this.dsShaderCog = new System.Windows.Forms.PictureBox();
             this.dsShaderEdit = new System.Windows.Forms.PictureBox();
+            this.dsShaderSave = new System.Windows.Forms.PictureBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.dsClasses = new TreelistView.TreeListView();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
@@ -361,6 +363,7 @@
             this.psShader = new System.Windows.Forms.Label();
             this.psShaderCog = new System.Windows.Forms.PictureBox();
             this.psShaderEdit = new System.Windows.Forms.PictureBox();
+            this.psShaderSave = new System.Windows.Forms.PictureBox();
             this.pixelClassGroupBox = new System.Windows.Forms.GroupBox();
             this.psClasses = new TreelistView.TreeListView();
             this.groupBox28 = new System.Windows.Forms.GroupBox();
@@ -440,6 +443,8 @@
             this.showEmpty = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.exportDialog = new System.Windows.Forms.SaveFileDialog();
+            this.hsShaderSave = new System.Windows.Forms.PictureBox();
+            this.gsShaderSave = new System.Windows.Forms.PictureBox();
             toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             toolstripTable = new System.Windows.Forms.TableLayoutPanel();
             groupBox2 = new System.Windows.Forms.GroupBox();
@@ -478,6 +483,7 @@
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vsShaderCog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vsShaderEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vsShaderSave)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vsClasses)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -508,6 +514,7 @@
             this.flowLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsShaderCog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsShaderEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsShaderSave)).BeginInit();
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsClasses)).BeginInit();
             this.groupBox18.SuspendLayout();
@@ -554,6 +561,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.psShaderCog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.psShaderEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.psShaderSave)).BeginInit();
             this.pixelClassGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.psClasses)).BeginInit();
             this.groupBox28.SuspendLayout();
@@ -602,12 +610,14 @@
             this.groupBox36.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csCBuffers)).BeginInit();
             this.rightclickMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hsShaderSave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gsShaderSave)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripLabel1
             // 
             toolStripLabel1.Name = "toolStripLabel1";
-            toolStripLabel1.Size = new System.Drawing.Size(84, 22);
+            toolStripLabel1.Size = new System.Drawing.Size(93, 22);
             toolStripLabel1.Text = "Display Controls";
             // 
             // toolstripTable
@@ -633,7 +643,7 @@
             this.pipeFlow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pipeFlow.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pipeFlow.Location = new System.Drawing.Point(4, 35);
-            this.pipeFlow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pipeFlow.Margin = new System.Windows.Forms.Padding(4);
             this.pipeFlow.Name = "pipeFlow";
             this.pipeFlow.SelectedStage = 0;
             this.pipeFlow.Size = new System.Drawing.Size(1163, 62);
@@ -646,7 +656,7 @@
             this.flowLayoutPanel6.Controls.Add(this.toolStrip1);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(394, 25);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(423, 25);
             this.flowLayoutPanel6.TabIndex = 1;
             // 
             // toolStrip1
@@ -660,7 +670,7 @@
             this.export});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(394, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(423, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -675,7 +685,7 @@
             this.showDisabledToolitem.Image = global::renderdocui.Properties.Resources.page_white_delete;
             this.showDisabledToolitem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showDisabledToolitem.Name = "showDisabledToolitem";
-            this.showDisabledToolitem.Size = new System.Drawing.Size(126, 22);
+            this.showDisabledToolitem.Size = new System.Drawing.Size(136, 22);
             this.showDisabledToolitem.Text = "Show Disabled Items";
             this.showDisabledToolitem.Click += new System.EventHandler(this.hideDisabled_Click);
             // 
@@ -685,7 +695,7 @@
             this.showEmptyToolitem.Image = global::renderdocui.Properties.Resources.page_white_database;
             this.showEmptyToolitem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showEmptyToolitem.Name = "showEmptyToolitem";
-            this.showEmptyToolitem.Size = new System.Drawing.Size(116, 22);
+            this.showEmptyToolitem.Size = new System.Drawing.Size(125, 22);
             this.showEmptyToolitem.Text = "Show Empty Items";
             this.showEmptyToolitem.Click += new System.EventHandler(this.hideEmpty_Click);
             // 
@@ -694,7 +704,7 @@
             this.export.Image = global::renderdocui.Properties.Resources.save;
             this.export.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.export.Name = "export";
-            this.export.Size = new System.Drawing.Size(59, 22);
+            this.export.Size = new System.Drawing.Size(60, 22);
             this.export.Text = "Export";
             this.export.Click += new System.EventHandler(this.export_Click);
             // 
@@ -1093,6 +1103,7 @@
             this.flowLayoutPanel3.Controls.Add(this.vsShader);
             this.flowLayoutPanel3.Controls.Add(this.vsShaderCog);
             this.flowLayoutPanel3.Controls.Add(this.vsShaderEdit);
+            this.flowLayoutPanel3.Controls.Add(this.vsShaderSave);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -1143,6 +1154,18 @@
             this.vsShaderEdit.TabStop = false;
             this.toolTip.SetToolTip(this.vsShaderEdit, "HLSL edit and replace this shader");
             this.vsShaderEdit.Click += new System.EventHandler(this.shaderedit_Click);
+            // 
+            // vsShaderSave
+            // 
+            this.vsShaderSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vsShaderSave.Image = global::renderdocui.Properties.Resources.save;
+            this.vsShaderSave.Location = new System.Drawing.Point(353, 3);
+            this.vsShaderSave.Name = "vsShaderSave";
+            this.vsShaderSave.Size = new System.Drawing.Size(16, 16);
+            this.vsShaderSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.vsShaderSave.TabIndex = 31;
+            this.vsShaderSave.TabStop = false;
+            this.vsShaderSave.Click += new System.EventHandler(this.vsShaderSave_Click);
             // 
             // groupBox5
             // 
@@ -1414,6 +1437,7 @@
             this.flowLayoutPanel4.Controls.Add(this.hsShader);
             this.flowLayoutPanel4.Controls.Add(this.hsShaderCog);
             this.flowLayoutPanel4.Controls.Add(this.hsShaderEdit);
+            this.flowLayoutPanel4.Controls.Add(this.hsShaderSave);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
@@ -1735,6 +1759,7 @@
             this.flowLayoutPanel5.Controls.Add(this.dsShader);
             this.flowLayoutPanel5.Controls.Add(this.dsShaderCog);
             this.flowLayoutPanel5.Controls.Add(this.dsShaderEdit);
+            this.flowLayoutPanel5.Controls.Add(this.dsShaderSave);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
@@ -1785,6 +1810,18 @@
             this.dsShaderEdit.TabStop = false;
             this.toolTip.SetToolTip(this.dsShaderEdit, "HLSL edit and replace this shader");
             this.dsShaderEdit.Click += new System.EventHandler(this.shaderedit_Click);
+            // 
+            // dsShaderSave
+            // 
+            this.dsShaderSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dsShaderSave.Image = global::renderdocui.Properties.Resources.save;
+            this.dsShaderSave.Location = new System.Drawing.Point(353, 3);
+            this.dsShaderSave.Name = "dsShaderSave";
+            this.dsShaderSave.Size = new System.Drawing.Size(16, 16);
+            this.dsShaderSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.dsShaderSave.TabIndex = 29;
+            this.dsShaderSave.TabStop = false;
+            this.dsShaderSave.Click += new System.EventHandler(this.dsShaderSave_Click);
             // 
             // groupBox17
             // 
@@ -2105,6 +2142,7 @@
             this.flowLayoutPanel2.Controls.Add(this.gsShader);
             this.flowLayoutPanel2.Controls.Add(this.gsShaderCog);
             this.flowLayoutPanel2.Controls.Add(this.gsShaderEdit);
+            this.flowLayoutPanel2.Controls.Add(this.gsShaderSave);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -2431,7 +2469,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 608F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 611F));
             this.tableLayoutPanel8.Controls.Add(this.forcedSampleCount, 7, 1);
             this.tableLayoutPanel8.Controls.Add(this.label14, 6, 1);
             this.tableLayoutPanel8.Controls.Add(this.frontCCW, 5, 0);
@@ -2864,6 +2902,7 @@
             this.flowLayoutPanel1.Controls.Add(this.psShader);
             this.flowLayoutPanel1.Controls.Add(this.psShaderCog);
             this.flowLayoutPanel1.Controls.Add(this.psShaderEdit);
+            this.flowLayoutPanel1.Controls.Add(this.psShaderSave);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -2914,6 +2953,18 @@
             this.psShaderEdit.TabStop = false;
             this.toolTip.SetToolTip(this.psShaderEdit, "HLSL edit and replace this shader");
             this.psShaderEdit.Click += new System.EventHandler(this.shaderedit_Click);
+            // 
+            // psShaderSave
+            // 
+            this.psShaderSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.psShaderSave.Image = global::renderdocui.Properties.Resources.save;
+            this.psShaderSave.Location = new System.Drawing.Point(353, 3);
+            this.psShaderSave.Name = "psShaderSave";
+            this.psShaderSave.Size = new System.Drawing.Size(16, 16);
+            this.psShaderSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.psShaderSave.TabIndex = 30;
+            this.psShaderSave.TabStop = false;
+            this.psShaderSave.Click += new System.EventHandler(this.psShaderSave_Click);
             // 
             // pixelClassGroupBox
             // 
@@ -4214,13 +4265,13 @@
             this.showDisabled,
             this.showEmpty});
             this.rightclickMenu.Name = "rightclickMenu";
-            this.rightclickMenu.Size = new System.Drawing.Size(144, 48);
+            this.rightclickMenu.Size = new System.Drawing.Size(152, 48);
             // 
             // showDisabled
             // 
             this.showDisabled.Image = global::renderdocui.Properties.Resources.page_white_delete;
             this.showDisabled.Name = "showDisabled";
-            this.showDisabled.Size = new System.Drawing.Size(143, 22);
+            this.showDisabled.Size = new System.Drawing.Size(151, 22);
             this.showDisabled.Text = "Show Disabled";
             this.showDisabled.Click += new System.EventHandler(this.hideDisabled_Click);
             // 
@@ -4228,7 +4279,7 @@
             // 
             this.showEmpty.Image = global::renderdocui.Properties.Resources.page_white_database;
             this.showEmpty.Name = "showEmpty";
-            this.showEmpty.Size = new System.Drawing.Size(143, 22);
+            this.showEmpty.Size = new System.Drawing.Size(151, 22);
             this.showEmpty.Text = "Show Empty";
             this.showEmpty.Click += new System.EventHandler(this.hideEmpty_Click);
             // 
@@ -4237,6 +4288,30 @@
             this.exportDialog.DefaultExt = "html";
             this.exportDialog.Filter = "HTML Files (*.html)|*.html";
             this.exportDialog.Title = "Export pipeline state as HTML";
+            // 
+            // hsShaderSave
+            // 
+            this.hsShaderSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hsShaderSave.Image = global::renderdocui.Properties.Resources.save;
+            this.hsShaderSave.Location = new System.Drawing.Point(353, 3);
+            this.hsShaderSave.Name = "hsShaderSave";
+            this.hsShaderSave.Size = new System.Drawing.Size(16, 16);
+            this.hsShaderSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.hsShaderSave.TabIndex = 28;
+            this.hsShaderSave.TabStop = false;
+            this.hsShaderSave.Click += new System.EventHandler(this.hsShaderSave_Click);
+            // 
+            // gsShaderSave
+            // 
+            this.gsShaderSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gsShaderSave.Image = global::renderdocui.Properties.Resources.save;
+            this.gsShaderSave.Location = new System.Drawing.Point(353, 3);
+            this.gsShaderSave.Name = "gsShaderSave";
+            this.gsShaderSave.Size = new System.Drawing.Size(16, 16);
+            this.gsShaderSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.gsShaderSave.TabIndex = 29;
+            this.gsShaderSave.TabStop = false;
+            this.gsShaderSave.Click += new System.EventHandler(this.gsShaderSave_Click);
             // 
             // D3D11PipelineStateViewer
             // 
@@ -4278,6 +4353,7 @@
             this.flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vsShaderCog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vsShaderEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vsShaderSave)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vsClasses)).EndInit();
             this.groupBox7.ResumeLayout(false);
@@ -4310,6 +4386,7 @@
             this.flowLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsShaderCog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsShaderEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsShaderSave)).EndInit();
             this.groupBox17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dsClasses)).EndInit();
             this.groupBox18.ResumeLayout(false);
@@ -4359,6 +4436,7 @@
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.psShaderCog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.psShaderEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.psShaderSave)).EndInit();
             this.pixelClassGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.psClasses)).EndInit();
             this.groupBox28.ResumeLayout(false);
@@ -4416,6 +4494,8 @@
             this.groupBox36.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.csCBuffers)).EndInit();
             this.rightclickMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.hsShaderSave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gsShaderSave)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4622,5 +4702,10 @@
         private System.Windows.Forms.ToolStripButton export;
         private System.Windows.Forms.SaveFileDialog exportDialog;
         private TreelistView.TreeListView gsStreams;
+        private System.Windows.Forms.PictureBox dsShaderSave;
+        private System.Windows.Forms.PictureBox psShaderSave;
+        private System.Windows.Forms.PictureBox vsShaderSave;
+        private System.Windows.Forms.PictureBox hsShaderSave;
+        private System.Windows.Forms.PictureBox gsShaderSave;
     }
 }

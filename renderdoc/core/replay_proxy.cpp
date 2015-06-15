@@ -202,7 +202,9 @@ void Serialiser::Serialise(const char *name, ShaderReflection &el)
 	Serialise("", el.DebugInfo.files);
 
 	Serialise("", el.Disassembly);
-	
+
+	Serialise("", el.ShaderBlob);
+
 	Serialise("", el.InputSig);
 	Serialise("", el.OutputSig);
 
@@ -212,7 +214,8 @@ void Serialiser::Serialise(const char *name, ShaderReflection &el)
 
 	Serialise("", el.Interfaces);
 
-	SIZE_CHECK(ShaderReflection, 68);
+	//SIZE_CHECK(ShaderReflection, 68);
+	SIZE_CHECK(ShaderReflection, 76);	// Added ShaderBlob
 }
 
 template<>

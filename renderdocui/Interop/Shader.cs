@@ -385,6 +385,9 @@ namespace renderdoc
         public string Disassembly;
 
         [CustomMarshalAs(CustomUnmanagedType.TemplatedArray)]
+        public byte[] ShaderBlob;
+
+        [CustomMarshalAs(CustomUnmanagedType.TemplatedArray)]
         public SigParameter[] InputSig;
         [CustomMarshalAs(CustomUnmanagedType.TemplatedArray)]
         public SigParameter[] OutputSig;

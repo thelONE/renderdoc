@@ -897,7 +897,7 @@ ShaderReflection *MakeShaderReflection(DXBC::DXBCFile *dxbc)
 	}
 
 	ret->Disassembly = dxbc->m_Disassembly;
-
+	ret->ShaderBlob = dxbc->m_ShaderBlob;
 	ret->InputSig = dxbc->m_InputSig;
 	ret->OutputSig = dxbc->m_OutputSig;
 

@@ -206,6 +206,8 @@ struct ShaderReflection
 	ShaderDebugChunk DebugInfo;
 	rdctype::str Disassembly;
 
+	rdctype::array<byte> ShaderBlob;
+
 	rdctype::array<SigParameter> InputSig;
 	rdctype::array<SigParameter> OutputSig;
 	
